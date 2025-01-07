@@ -12,49 +12,52 @@ ScreenGui.ResetOnSpawn = false
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-MainFrame.Size = UDim2.new(0, 300, 0, 400)
-MainFrame.Position = UDim2.new(0.05, 0, 0.1, 0)
+MainFrame.Size = UDim2.new(0, 250, 0, 350)
+MainFrame.Position = UDim2.new(0.5, -125, 0.2, 0)
 MainFrame.Visible = true
 MainFrame.BorderSizePixel = 2
+MainFrame.Draggable = true  -- ทำให้ลาก UI ได้
+MainFrame.Active = true
+MainFrame.Selectable = true
 
 local TitleLabel = Instance.new("TextLabel")
 TitleLabel.Name = "TitleLabel"
 TitleLabel.Parent = MainFrame
 TitleLabel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-TitleLabel.Size = UDim2.new(0, 300, 0, 50)
+TitleLabel.Size = UDim2.new(1, 0, 0, 40)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.Font = Enum.Font.GothamBold
 TitleLabel.Text = "WACK SHOP"
 TitleLabel.TextSize = 24
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Center
 
 ToggleButton.Name = "ToggleButton"
 ToggleButton.Parent = ScreenGui
 ToggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Position = UDim2.new(0, 10, 0.1, 0)
+ToggleButton.Position = UDim2.new(0, 10, 0.2, 0)
 ToggleButton.Text = "UI"
 
 FunctionButtonsFrame.Name = "FunctionButtonsFrame"
 FunctionButtonsFrame.Parent = MainFrame
 FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-FunctionButtonsFrame.Size = UDim2.new(0, 300, 0, 300)
-FunctionButtonsFrame.Position = UDim2.new(0, 0, 0, 50)
+FunctionButtonsFrame.Size = UDim2.new(1, 0, 0, 230)
+FunctionButtonsFrame.Position = UDim2.new(0, 0, 0, 40)
 FunctionButtonsFrame.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
-FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
 
 TextBox.Name = "TextBox"
 TextBox.Parent = MainFrame
 TextBox.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-TextBox.Size = UDim2.new(0, 200, 0, 30)
-TextBox.Position = UDim2.new(0.1, 0, 0.8, 0)
+TextBox.Size = UDim2.new(0, 180, 0, 30)
+TextBox.Position = UDim2.new(0.1, 0, 0.85, 0)
 TextBox.PlaceholderText = "Enter Function Name"
 
 RunButton.Name = "RunButton"
 RunButton.Parent = MainFrame
 RunButton.BackgroundColor3 = Color3.fromRGB(100, 200, 100)
 RunButton.Size = UDim2.new(0, 80, 0, 30)
-RunButton.Position = UDim2.new(0.6, 0, 0.8, 0)
+RunButton.Position = UDim2.new(0.6, 0, 0.85, 0)
 RunButton.Text = "Run"
 
 local functionScripts = {
@@ -70,19 +73,24 @@ local functionScripts = {
 }
 
 local yOffset = 10
+local totalHeight = 0  -- สำหรับคำนวณความสูงรวมของปุ่มทั้งหมด
 for name, func in pairs(functionScripts) do
     local button = Instance.new("TextButton")
     button.Name = name
     button.Parent = FunctionButtonsFrame
     button.BackgroundColor3 = Color3.fromRGB(100, 100, 200)
-    button.Size = UDim2.new(0, 280, 0, 30)
+    button.Size = UDim2.new(0, 230, 0, 30)
     button.Position = UDim2.new(0, 10, 0, yOffset)
     button.Text = name
 
     yOffset = yOffset + 40
+    totalHeight = totalHeight + 40  -- เพิ่มความสูงของแต่ละปุ่มลงใน totalHeight
 
     button.MouseButton1Click:Connect(func)
 end
+
+-- ปรับ CanvasSize ของ ScrollingFrame
+FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
 
 RunButton.MouseButton1Click:Connect(function()
     local functionName = TextBox.Text
