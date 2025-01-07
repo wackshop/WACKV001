@@ -1,0 +1,127 @@
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local ToggleButton = Instance.new("TextButton")
+local FunctionButtonsFrame = Instance.new("ScrollingFrame")
+local TextBox = Instance.new("TextBox")
+local RunButton = Instance.new("TextButton")
+
+ScreenGui.Name = "CustomScriptUI"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainFrame.Size = UDim2.new(0, 300, 0, 400)
+MainFrame.Position = UDim2.new(0.05, 0, 0.1, 0)
+MainFrame.Visible = true
+MainFrame.BorderSizePixel = 2
+
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = MainFrame
+TitleLabel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TitleLabel.Size = UDim2.new(0, 300, 0, 50)
+TitleLabel.Position = UDim2.new(0, 0, 0, 0)
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.Text = "WACK SHOP"
+TitleLabel.TextSize = 24
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ScreenGui
+ToggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Position = UDim2.new(0, 10, 0.1, 0)
+ToggleButton.Text = "UI"
+
+FunctionButtonsFrame.Name = "FunctionButtonsFrame"
+FunctionButtonsFrame.Parent = MainFrame
+FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+FunctionButtonsFrame.Size = UDim2.new(0, 300, 0, 300)
+FunctionButtonsFrame.Position = UDim2.new(0, 0, 0, 50)
+FunctionButtonsFrame.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
+FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
+
+TextBox.Name = "TextBox"
+TextBox.Parent = MainFrame
+TextBox.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+TextBox.Size = UDim2.new(0, 200, 0, 30)
+TextBox.Position = UDim2.new(0.1, 0, 0.8, 0)
+TextBox.PlaceholderText = "Enter Function Name"
+
+RunButton.Name = "RunButton"
+RunButton.Parent = MainFrame
+RunButton.BackgroundColor3 = Color3.fromRGB(100, 200, 100)
+RunButton.Size = UDim2.new(0, 80, 0, 30)
+RunButton.Position = UDim2.new(0.6, 0, 0.8, 0)
+RunButton.Text = "Run"
+
+local functionScripts = {
+    ["บิน V1"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/iUVERBrs"))() end,
+    ["ฆ่าบอท ทุกตัว (บางแมพ)"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/DczvQZyU"))() end,
+    ["ล็อคหัว"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/sKSw7WdV"))() end,
+    ["เพิ่ม FPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/FrMaC7KA"))() end,
+    ["วิ่งเร็ว 4 เท่า"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/pZhkm5mD"))() end,
+    ["เสกของ (บางแมพ)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua"))() end,
+    ["DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
+    ["hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
+    ["มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end -- เพิ่มฟังก์ชันใหม่
+}
+
+local yOffset = 10
+for name, func in pairs(functionScripts) do
+    local button = Instance.new("TextButton")
+    button.Name = name
+    button.Parent = FunctionButtonsFrame
+    button.BackgroundColor3 = Color3.fromRGB(100, 100, 200)
+    button.Size = UDim2.new(0, 280, 0, 30)
+    button.Position = UDim2.new(0, 10, 0, yOffset)
+    button.Text = name
+
+    yOffset = yOffset + 40
+
+    button.MouseButton1Click:Connect(func)
+end
+
+RunButton.MouseButton1Click:Connect(function()
+    local functionName = TextBox.Text
+    if functionScripts[functionName] then
+        functionScripts[functionName]()
+    else
+        print("Function not found: " .. functionName)
+    end
+end)
+
+ToggleButton.MouseButton1Click:Connect(function()
+    MainFrame.Visible = not MainFrame.Visible
+end)
+
+-- Color cycling effect
+local colors = {
+    Color3.fromRGB(255, 0, 0),
+    Color3.fromRGB(0, 255, 0),
+    Color3.fromRGB(0, 0, 255),
+    Color3.fromRGB(255, 255, 0),
+    Color3.fromRGB(0, 255, 255),
+    Color3.fromRGB(255, 0, 255)
+}
+
+local colorIndex = 1
+
+local function cycleColors()
+    while true do
+        MainFrame.BackgroundColor3 = colors[colorIndex]
+        ToggleButton.BackgroundColor3 = colors[colorIndex]
+        RunButton.BackgroundColor3 = colors[colorIndex]
+        for _, button in ipairs(FunctionButtonsFrame:GetChildren()) do
+            if button:IsA("TextButton") then
+                button.BackgroundColor3 = colors[colorIndex]
+            end
+        end
+        colorIndex = colorIndex % #colors + 1
+        wait(0.1)
+    end
+end
+
+cycleColors()
