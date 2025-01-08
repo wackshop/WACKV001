@@ -37,7 +37,7 @@ ToggleButton.Parent = ScreenGui
 ToggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Position = UDim2.new(0, 10, 0.2, 0)
-ToggleButton.Text = "UI"
+ToggleButton.Text = "W"
 
 FunctionButtonsFrame.Name = "FunctionButtonsFrame"
 FunctionButtonsFrame.Parent = MainFrame
@@ -61,16 +61,16 @@ RunButton.Position = UDim2.new(0.6, 0, 0.85, 0)
 RunButton.Text = "Run"
 
 local functionScripts = {
-    ["บิน V1"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/iUVERBrs"))() end,
-    ["ฆ่าบอท ทุกตัว (บางแมพ)"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/DczvQZyU"))() end,
-    ["ล็อคหัว"] = function() loadstring(game:HttpGet('https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw/51b6ddf5dc74731a24f912134061f150b6f6b316/gistfile1.txt'))() end,
-    ["เพิ่ม FPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/FrMaC7KA"))() end,
-    ["วิ่งเร็ว 4 เท่า"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/pZhkm5mD"))() end,
-    ["เสกของ (บางแมพ)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua"))() end,
-    ["DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
-    ["hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
-    ["มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
-    ["หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end -- ฟังก์ชันใหม่
+    ["[+] บิน V1"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/iUVERBrs"))() end,
+    ["[+] ฆ่าบอท ทุกตัว (บางแมพ)"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/DczvQZyU"))() end,
+    ["[+] ล็อคหัว"] = function() loadstring(game:HttpGet('https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw/51b6ddf5dc74731a24f912134061f150b6f6b316/gistfile1.txt'))() end,
+    ["[+] เพิ่ม FPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/FrMaC7KA"))() end,
+    ["[+] วิ่งเร็ว 4 เท่า"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/pZhkm5mD"))() end,
+    ["[+] เสกของ (บางแมพ)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua"))() end,
+    ["[+] DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
+    ["[+] hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
+    ["[+] มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
+    ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end -- ฟังก์ชันใหม่
 }
 
 local yOffset = 10
