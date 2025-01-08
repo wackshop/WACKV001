@@ -16,7 +16,7 @@ MainFrame.Size = UDim2.new(0, 250, 0, 350)
 MainFrame.Position = UDim2.new(0.5, -125, 0.2, 0)
 MainFrame.Visible = true
 MainFrame.BorderSizePixel = 2
-MainFrame.Draggable = true  -- ทำให้ลาก UI ได้
+MainFrame.Draggable = true
 MainFrame.Active = true
 MainFrame.Selectable = true
 
@@ -69,11 +69,12 @@ local functionScripts = {
     ["เสกของ (บางแมพ)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua"))() end,
     ["DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
     ["hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
-    ["มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end -- เพิ่มฟังก์ชันใหม่
+    ["มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
+    ["หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end -- ฟังก์ชันใหม่
 }
 
 local yOffset = 10
-local totalHeight = 0  -- สำหรับคำนวณความสูงรวมของปุ่มทั้งหมด
+local totalHeight = 0
 for name, func in pairs(functionScripts) do
     local button = Instance.new("TextButton")
     button.Name = name
@@ -84,12 +85,11 @@ for name, func in pairs(functionScripts) do
     button.Text = name
 
     yOffset = yOffset + 40
-    totalHeight = totalHeight + 40  -- เพิ่มความสูงของแต่ละปุ่มลงใน totalHeight
+    totalHeight = totalHeight + 40
 
     button.MouseButton1Click:Connect(func)
 end
 
--- ปรับ CanvasSize ของ ScrollingFrame
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
 
 RunButton.MouseButton1Click:Connect(function()
@@ -105,7 +105,6 @@ ToggleButton.MouseButton1Click:Connect(function()
     MainFrame.Visible = not MainFrame.Visible
 end)
 
--- Color cycling effect
 local colors = {
     Color3.fromRGB(255, 0, 0),
     Color3.fromRGB(0, 255, 0),
