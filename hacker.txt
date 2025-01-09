@@ -11,7 +11,7 @@ ScreenGui.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
 MainFrame.Size = UDim2.new(0, 250, 0, 350)
 MainFrame.Position = UDim2.new(0.5, -125, 0.2, 0)
 MainFrame.Visible = true
@@ -23,7 +23,7 @@ MainFrame.Selectable = true
 local TitleLabel = Instance.new("TextLabel")
 TitleLabel.Name = "TitleLabel"
 TitleLabel.Parent = MainFrame
-TitleLabel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
 TitleLabel.Size = UDim2.new(1, 0, 0, 40)
 TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.Font = Enum.Font.GothamBold
@@ -34,7 +34,7 @@ TitleLabel.TextXAlignment = Enum.TextXAlignment.Center
 
 ToggleButton.Name = "ToggleButton"
 ToggleButton.Parent = ScreenGui
-ToggleButton.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Position = UDim2.new(0, 10, 0.2, 0)
 ToggleButton.Text = "W"
@@ -55,7 +55,7 @@ TextBox.PlaceholderText = "Enter Function Name"
 
 RunButton.Name = "RunButton"
 RunButton.Parent = MainFrame
-RunButton.BackgroundColor3 = Color3.fromRGB(100, 200, 100)
+RunButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
 RunButton.Size = UDim2.new(0, 80, 0, 30)
 RunButton.Position = UDim2.new(0.6, 0, 0.85, 0)
 RunButton.Text = "Run"
@@ -82,7 +82,7 @@ for name, func in pairs(functionScripts) do
     local button = Instance.new("TextButton")
     button.Name = name
     button.Parent = FunctionButtonsFrame
-    button.BackgroundColor3 = Color3.fromRGB(100, 100, 200)
+    button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
     button.Size = UDim2.new(0, 230, 0, 30)
     button.Position = UDim2.new(0, 10, 0, yOffset)
     button.Text = name
@@ -107,31 +107,3 @@ end)
 ToggleButton.MouseButton1Click:Connect(function()
     MainFrame.Visible = not MainFrame.Visible
 end)
-
-local colors = {
-    Color3.fromRGB(255, 0, 0),
-    Color3.fromRGB(0, 255, 0),
-    Color3.fromRGB(0, 0, 255),
-    Color3.fromRGB(255, 255, 0),
-    Color3.fromRGB(0, 255, 255),
-    Color3.fromRGB(255, 0, 255)
-}
-
-local colorIndex = 1
-
-local function cycleColors()
-    while true do
-        MainFrame.BackgroundColor3 = colors[colorIndex]
-        ToggleButton.BackgroundColor3 = colors[colorIndex]
-        RunButton.BackgroundColor3 = colors[colorIndex]
-        for _, button in ipairs(FunctionButtonsFrame:GetChildren()) do
-            if button:IsA("TextButton") then
-                button.BackgroundColor3 = colors[colorIndex]
-            end
-        end
-        colorIndex = colorIndex % #colors + 1
-        wait(0.1)
-    end
-end
-
-cycleColors()
