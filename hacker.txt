@@ -70,7 +70,8 @@ local functionScripts = {
     ["[+] DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
     ["[+] hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
     ["[+] มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
-    ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end -- ฟังก์ชันใหม่
+    ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end,
+    ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end -- ฟังก์ชัน F3X ที่เพิ่มใหม่
 }
 
 local yOffset = 10
