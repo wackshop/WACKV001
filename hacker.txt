@@ -1,64 +1,48 @@
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
 local ToggleButton = Instance.new("TextButton")
 local FunctionButtonsFrame = Instance.new("ScrollingFrame")
-local TextBox = Instance.new("TextBox")
-local RunButton = Instance.new("TextButton")
 
-ScreenGui.Name = "CustomScriptUI"
+ScreenGui.Name = "WACKShopUI"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
-MainFrame.Size = UDim2.new(0, 250, 0, 350)
-MainFrame.Position = UDim2.new(0.5, -125, 0.2, 0)
+MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+MainFrame.Size = UDim2.new(0, 300, 0, 400)
+MainFrame.Position = UDim2.new(0.5, -150, 0.5, -200)
 MainFrame.Visible = true
-MainFrame.BorderSizePixel = 2
+MainFrame.BorderSizePixel = 0
 MainFrame.Draggable = true
 MainFrame.Active = true
-MainFrame.Selectable = true
 
-local TitleLabel = Instance.new("TextLabel")
 TitleLabel.Name = "TitleLabel"
 TitleLabel.Parent = MainFrame
-TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
+TitleLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 TitleLabel.Size = UDim2.new(1, 0, 0, 40)
-TitleLabel.Position = UDim2.new(0, 0, 0, 0)
 TitleLabel.Font = Enum.Font.GothamBold
 TitleLabel.Text = "WACK SHOP"
-TitleLabel.TextSize = 24
+TitleLabel.TextSize = 20
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.TextXAlignment = Enum.TextXAlignment.Center
-
-ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ScreenGui
-ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
-ToggleButton.Size = UDim2.new(0, 50, 0, 50)
-ToggleButton.Position = UDim2.new(0, 10, 0.2, 0)
-ToggleButton.Text = "W"
 
 FunctionButtonsFrame.Name = "FunctionButtonsFrame"
 FunctionButtonsFrame.Parent = MainFrame
-FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-FunctionButtonsFrame.Size = UDim2.new(1, 0, 0, 230)
-FunctionButtonsFrame.Position = UDim2.new(0, 0, 0, 40)
-FunctionButtonsFrame.ScrollBarImageColor3 = Color3.fromRGB(100, 100, 100)
+FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+FunctionButtonsFrame.Size = UDim2.new(1, -20, 1, -60)
+FunctionButtonsFrame.Position = UDim2.new(0, 10, 0, 50)
+FunctionButtonsFrame.ScrollBarThickness = 5
 
-TextBox.Name = "TextBox"
-TextBox.Parent = MainFrame
-TextBox.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-TextBox.Size = UDim2.new(0, 180, 0, 30)
-TextBox.Position = UDim2.new(0.1, 0, 0.85, 0)
-TextBox.PlaceholderText = "Enter Function Name"
-
-RunButton.Name = "RunButton"
-RunButton.Parent = MainFrame
-RunButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
-RunButton.Size = UDim2.new(0, 80, 0, 30)
-RunButton.Position = UDim2.new(0.6, 0, 0.85, 0)
-RunButton.Text = "Run"
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ScreenGui
+ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Position = UDim2.new(0, 10, 0, 10)
+ToggleButton.Font = Enum.Font.GothamBold
+ToggleButton.Text = "W"
+ToggleButton.TextSize = 20
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 
 local functionScripts = {
     ["[+] บิน V1"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/iUVERBrs"))() end,
@@ -82,27 +66,20 @@ for name, func in pairs(functionScripts) do
     local button = Instance.new("TextButton")
     button.Name = name
     button.Parent = FunctionButtonsFrame
-    button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- สีแดง
-    button.Size = UDim2.new(0, 230, 0, 30)
+    button.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+    button.Size = UDim2.new(1, -20, 0, 30)
     button.Position = UDim2.new(0, 10, 0, yOffset)
+    button.Font = Enum.Font.Gotham
+    button.TextSize = 14
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
     button.Text = name
+    button.MouseButton1Click:Connect(func)
 
     yOffset = yOffset + 40
     totalHeight = totalHeight + 40
-
-    button.MouseButton1Click:Connect(func)
 end
 
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
-
-RunButton.MouseButton1Click:Connect(function()
-    local functionName = TextBox.Text
-    if functionScripts[functionName] then
-        functionScripts[functionName]()
-    else
-        print("Function not found: " .. functionName)
-    end
-end)
 
 ToggleButton.MouseButton1Click:Connect(function()
     MainFrame.Visible = not MainFrame.Visible
