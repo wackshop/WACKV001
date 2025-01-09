@@ -71,7 +71,9 @@ local functionScripts = {
     ["[+] hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
     ["[+] มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
     ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end,
-    ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end -- ฟังก์ชัน F3X ที่เพิ่มใหม่
+    ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end,
+    ["[+] infinity yield"] = function() loadstring(game:HttpGet"https://pastebin.com/raw/3P1z104N")() end
+    
 }
 
 local yOffset = 10
