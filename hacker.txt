@@ -57,7 +57,9 @@ local functionScripts = {
     ["[+] มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/xz6ngn1g", true))() end,
     ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end,
     ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end,
-    ["[+] infinity yield"] = function() loadstring(game:HttpGet"https://pastebin.com/raw/3P1z104N")() end
+    ["[+] infinity yield"] = function() loadstring(game:HttpGet"https://pastebin.com/raw/3P1z104N")() end,
+    ["[+] วาปเตะผู้เล่นหลุดแมพ"] = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))() end
 }
 
 local yOffset = 10
