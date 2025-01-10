@@ -59,7 +59,9 @@ local functionScripts = {
     ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end,
     ["[+] infinity yield"] = function() loadstring(game:HttpGet"https://pastebin.com/raw/3P1z104N")() end,
     ["[+] วาปเตะผู้เล่นหลุดแมพ"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))() end
+loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))() end,
+    ["[+] เล่นว่าว"] = function()
+loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))("Spider Script") end
 }
 
 local yOffset = 10
