@@ -67,7 +67,9 @@ loadstring(game:HttpGet("https://pastebin.com/raw/DnuRBNVe",true))() end,
     ["[+] เปิดเสียงกวนๆ (ใช้ได้บางแมพ)"] = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/cV8CaN2Z"))() end,
     ["[+] RC7 (ไม่รู้จักไม่ต้องใช้)"] = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CoreGui/Scripts/main/RC7"))() end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CoreGui/Scripts/main/RC7"))() end,
+    ["[+] แสดง RemoteEvent"] = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/dYXWzvH5"))() end
 }
 
 local yOffset = 10
