@@ -4,39 +4,54 @@ local TitleLabel = Instance.new("TextLabel")
 local ToggleButton = Instance.new("TextButton")
 local FunctionButtonsFrame = Instance.new("ScrollingFrame")
 
+local UICorner_Main = Instance.new("UICorner")
+local UICorner_Button = Instance.new("UICorner")
+local UICorner_Toggle = Instance.new("UICorner")
+
 ScreenGui.Name = "WACKShopUI"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 
+-- Main Frame
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-MainFrame.Size = UDim2.new(0, 300, 0, 400)
-MainFrame.Position = UDim2.new(0.5, -150, 0.5, -200)
+MainFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+MainFrame.BackgroundTransparency = 0.2
+MainFrame.Size = UDim2.new(0, 320, 0, 420)
+MainFrame.Position = UDim2.new(0.5, -160, 0.5, -210)
 MainFrame.Visible = true
 MainFrame.BorderSizePixel = 0
 MainFrame.Draggable = true
 MainFrame.Active = true
 
+UICorner_Main.Parent = MainFrame
+UICorner_Main.CornerRadius = UDim.new(0, 10) -- โค้งเล็กน้อย
+
+-- Title
 TitleLabel.Name = "TitleLabel"
 TitleLabel.Parent = MainFrame
 TitleLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TitleLabel.BackgroundTransparency = 0.2
 TitleLabel.Size = UDim2.new(1, 0, 0, 40)
 TitleLabel.Font = Enum.Font.GothamBold
 TitleLabel.Text = "WACK SHOP"
 TitleLabel.TextSize = 20
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 
+-- Function Buttons Frame
 FunctionButtonsFrame.Name = "FunctionButtonsFrame"
 FunctionButtonsFrame.Parent = MainFrame
-FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+FunctionButtonsFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+FunctionButtonsFrame.BackgroundTransparency = 0.2
 FunctionButtonsFrame.Size = UDim2.new(1, -20, 1, -60)
 FunctionButtonsFrame.Position = UDim2.new(0, 10, 0, 50)
 FunctionButtonsFrame.ScrollBarThickness = 5
 
+-- Toggle Button
 ToggleButton.Name = "ToggleButton"
 ToggleButton.Parent = ScreenGui
-ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(200, 60, 60)
+ToggleButton.BackgroundTransparency = 0.1
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Position = UDim2.new(0, 10, 0, 10)
 ToggleButton.Font = Enum.Font.GothamBold
@@ -44,48 +59,55 @@ ToggleButton.Text = "W"
 ToggleButton.TextSize = 20
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 
+UICorner_Toggle.Parent = ToggleButton
+UICorner_Toggle.CornerRadius = UDim.new(1, 0) -- ทำให้เป็นปุ่มกลม
+
+-- Function Buttons
 local functionScripts = {
-    ["[+] บิน V1"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/iUVERBrs"))() end,
-    ["[+] ฆ่าบอท ทุกตัว (บางแมพ)"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/DczvQZyU"))() end,
-    ["[+] ล็อคหัว"] = function() loadstring(game:HttpGet('https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw/51b6ddf5dc74731a24f912134061f150b6f6b316/gistfile1.txt'))() end,
-    ["[+] ดีดผู้เล่นกระเด็น"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/pMFnTQ31"))() end,
-    ["[+] ทำให้เล่นลื่นขึ้น (บูส FPS)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt"))() end,
-    ["[+] วิ่งเร็ว 4 เท่า"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/pZhkm5mD"))() end,
-    ["[+] เสกของ (บางแมพ)"] = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua"))() end,
-    ["[+] DEX ถอดไฟล์เซิฟเวอร์"] = function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))() end,
-    ["[+] hitbox 50%"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/vk5xsDiB"))() end,
-    ["[+] มองทะลุ EPS"] = function() loadstring(game:HttpGet("https://pastebin.com/raw/ZkLhNuDL", true))() end,
-    ["[+] หายตัว"] = function() loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))() end,
-    ["[+] F3X"] = function() loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)() end,
-    ["[+] infinity yield"] = function() loadstring(game:HttpGet"https://pastebin.com/raw/3P1z104N")() end,
-    ["[+] วาปเตะผู้เล่นหลุดแมพ"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))() end,
-    ["[+] เล่นว่าว"] = function()
-loadstring(game:HttpGet("https://pastefy.app/wa3v2Vgm/raw"))("Spider Script") end,
-    ["[+] ดึงผู้เล่นอยู่ตรงหน้า (ดึงปลอม)"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/DnuRBNVe",true))() end,
-    ["[+] เปิดเสียงกวนๆ (ใช้ได้บางแมพ)"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/cV8CaN2Z"))() end,
-    ["[+] RC7 (ไม่รู้จักไม่ต้องใช้)"] = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CoreGui/Scripts/main/RC7"))() end,
-    ["[+] แสดง RemoteEvent"] = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/dYXWzvH5"))() end
+    ["[+] บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
+    ["[+] ฆ่าบอท ทุกตัว (บางแมพ)"] = "https://pastebin.com/raw/DczvQZyU",
+    ["[+] ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw/51b6ddf5dc74731a24f912134061f150b6f6b316/gistfile1.txt",
+    ["[+] ดีดผู้เล่นกระเด็น"] = "https://pastebin.com/raw/pMFnTQ31",
+    ["[+] ทำให้เล่นลื่นขึ้น (บูส FPS)"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
+    ["[+] วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD",
+    ["[+] เสกของ (บางแมพ)"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
+    ["[+] DEX ถอดไฟล์เซิฟเวอร์"] = "https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888",
+    ["[+] hitbox 50%"] = "https://pastebin.com/raw/vk5xsDiB",
+    ["[+] มองทะลุ EPS"] = "https://pastebin.com/raw/ZkLhNuDL",
+    ["[+] หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf",
+    ["[+] F3X"] = "rbxassetid://6695644299",
+    ["[+] infinity yield"] = "https://pastebin.com/raw/3P1z104N",
+    ["[+] วาปเตะผู้เล่นหลุดแมพ"] = "https://pastebin.com/raw/zqyDSUWX",
+    ["[+] เล่นว่าว"] = "https://pastefy.app/wa3v2Vgm/raw",
+    ["[+] ดึงผู้เล่นอยู่ตรงหน้า (ดึงปลอม)"] = "https://pastebin.com/raw/DnuRBNVe",
+    ["[+] เปิดเสียงกวนๆ (ใช้ได้บางแมพ)"] = "https://pastebin.com/raw/cV8CaN2Z",
+    ["[+] RC7 (ไม่รู้จักไม่ต้องใช้)"] = "https://raw.githubusercontent.com/CoreGui/Scripts/main/RC7",
+    ["[+] แสดง RemoteEvent"] = "https://pastebin.com/raw/dYXWzvH5"
 }
 
 local yOffset = 10
 local totalHeight = 0
-for name, func in pairs(functionScripts) do
+for name, url in pairs(functionScripts) do
     local button = Instance.new("TextButton")
+    local corner = Instance.new("UICorner")
+
     button.Name = name
     button.Parent = FunctionButtonsFrame
-    button.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+    button.BackgroundColor3 = Color3.fromRGB(200, 60, 60)
+    button.BackgroundTransparency = 0.1
     button.Size = UDim2.new(1, -20, 0, 30)
     button.Position = UDim2.new(0, 10, 0, yOffset)
     button.Font = Enum.Font.Gotham
     button.TextSize = 14
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
     button.Text = name
-    button.MouseButton1Click:Connect(func)
+
+    corner.Parent = button
+    corner.CornerRadius = UDim.new(0, 8) -- ปุ่มโค้งมน
+
+    button.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(url, true))()
+    end)
 
     yOffset = yOffset + 40
     totalHeight = totalHeight + 40
@@ -93,6 +115,7 @@ end
 
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
 
+-- Toggle UI
 ToggleButton.MouseButton1Click:Connect(function()
     MainFrame.Visible = not MainFrame.Visible
 end)
