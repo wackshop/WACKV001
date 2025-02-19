@@ -70,6 +70,7 @@ local functionScripts = {
     ["[+] ดีดผู้เล่นกระเด็น"] = "https://pastebin.com/raw/pMFnTQ31",
     ["[+] ทำให้เล่นลื่นขึ้น (บูส FPS)"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
     ["[+] วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD",
+    ["[+] KILL ALL (เบียวทหารบางแมพ)"] = "https://pastebin.com/raw/pZhkm5mD",
     ["[+] เสกของ (บางแมพ)"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
     ["[+] DEX ถอดไฟล์เซิฟเวอร์"] = "https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888",
     ["[+] hitbox 32%"] = "https://pastebin.com/raw/TdkQXyJr",
