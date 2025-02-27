@@ -7,4 +7,4 @@
 
 
 สคริป
-loadstring(game:HttpGet("https://raw.githubusercontent.com/wackshop/DSC2234/refs/heads/main/hacker.txt",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wackshop/WACKV001/refs/heads/main/GUI1.txt",true))()
