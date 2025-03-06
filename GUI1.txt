@@ -73,7 +73,8 @@ local functionScripts = {
     ["🏃 วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD",
     ["💀 KILL ALL"] = "https://raw.githubusercontent.com/SAZXHUB/Killalllllllll/refs/heads/main/README.md",
     ["🎁 เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
-    ["🔍 มองทะลุ EPS"] = "https://pastebin.com/raw/ZkLhNuDL",
+    ["🔍 EPS Players"] = "https://pastebin.com/raw/ZkLhNuDL",
+    ["🤖 EPS BOT,NPC"] = "https://pastebin.com/raw/q26QuUBF",
     ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
 }
 
