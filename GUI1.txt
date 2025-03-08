@@ -1,15 +1,21 @@
+-----------------------------
+-- 1. โหลด Service ที่จำเป็น
+-----------------------------
 local TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 local UIS = game:GetService("UserInputService")
 
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+-----------------------------------------------
+-- 2. สร้าง UI หลัก (ScreenGui และ MainFrame)
+-----------------------------------------------
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "WACKShopUI"
 ScreenGui.Parent = PlayerGui
 ScreenGui.ResetOnSpawn = false
 
--- Main Frame (UI หลัก)
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
@@ -25,17 +31,9 @@ MainFrame.Draggable = true
 local UICorner_Main = Instance.new("UICorner", MainFrame)
 UICorner_Main.CornerRadius = UDim.new(0, 12)
 
--- Shadow Effect
-local Shadow = Instance.new("ImageLabel")
-Shadow.Parent = MainFrame
-Shadow.BackgroundTransparency = 1
-Shadow.Size = UDim2.new(1, 40, 1, 40)
-Shadow.Position = UDim2.new(0, -20, 0, -20)
-Shadow.Image = "rbxassetid://6014261993"
-Shadow.ImageTransparency = 0.6
-Shadow.ZIndex = 0
-
--- Title
+------------------------------------------------------
+-- 3. เพิ่มหัวข้อ "🔥 WACK SHOP 🔥"
+------------------------------------------------------
 local TitleLabel = Instance.new("TextLabel")
 TitleLabel.Parent = MainFrame
 TitleLabel.BackgroundTransparency = 1
@@ -46,15 +44,9 @@ TitleLabel.TextSize = 22
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TitleLabel.TextStrokeTransparency = 0.5
 
--- Gradient Effect
-local UIGradient = Instance.new("UIGradient", MainFrame)
-UIGradient.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 60, 60)),
-    ColorSequenceKeypoint.new(1, Color3.fromRGB(60, 60, 255))
-}
-UIGradient.Rotation = 45
-
--- Function Buttons Frame
+------------------------------------------------------
+-- 4. UI ส่วนแสดงฟังก์ชัน (รวมหมวดหมู่)
+------------------------------------------------------
 local FunctionButtonsFrame = Instance.new("ScrollingFrame")
 FunctionButtonsFrame.Parent = MainFrame
 FunctionButtonsFrame.BackgroundTransparency = 1
@@ -63,54 +55,81 @@ FunctionButtonsFrame.Position = UDim2.new(0, 10, 0, 60)
 FunctionButtonsFrame.ScrollBarThickness = 5
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
--- ฟังก์ชันทั้งหมดที่กลับมา
-local functionScripts = {
-    ["🚀 บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
-    ["⚔️ ฆ่าบอท ทุกตัว"] = "https://pastebin.com/raw/DczvQZyU",
-    ["🎯 ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw",
-    ["💨 ดีดผู้เล่น"] = "https://pastebin.com/raw/pMFnTQ31",
-    ["🔥 บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
-    ["🏃 วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD",
-    ["💀 KILL ALL"] = "https://raw.githubusercontent.com/SAZXHUB/Killalllllllll/refs/heads/main/README.md",
-    ["🎁 เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
-    ["🔍 EPS Players"] = "https://pastebin.com/raw/ZkLhNuDL",
-    ["🤖 EPS BOT,NPC"] = "https://pastebin.com/raw/q26QuUBF",
-    ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
+local functionCategories = {
+    ["🏃 การเคลื่อนที่"] = {
+        ["🚀 บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
+        ["🔥 วาป"] = "https://pastebin.com/raw/K5FYvtvN",
+        ["🏃 วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD"
+    },
+    ["⚔️ การโจมตี"] = {
+        ["⚔️ ฆ่าบอท ทุกตัว"] = "https://pastebin.com/raw/DczvQZyU",
+        ["🎯 ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw"
+    },
+    ["🔧 เครื่องมือช่วยเล่น"] = {
+        ["🎁 เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
+        ["🔥 บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
+        ["🎩 Hitbox 32%"] = "https://pastebin.com/raw/NKTGd19i",
+        ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
+            },
+    ["😈 ปั่นประสาทผู้เล่น"] = {
+        ["🌌 หลุมดำ"] = "https://pastebin.com/raw/pkZnU5P5",
+        ["🔫 เสก AK47"] = "https://pastebin.com/raw/wgqMHz9V"
+    },
+    ["🔍 ESP & การมองเห็น"] = {
+        ["🔍 ESP Players"] = "https://pastebin.com/raw/ZkLhNuDL",
+        ["🤖 ESP BOT,NPC"] = "https://pastebin.com/raw/q26QuUBF"
+    }
 }
 
 local yOffset = 0
-for name, url in pairs(functionScripts) do
-    local button = Instance.new("TextButton")
-    button.Parent = FunctionButtonsFrame
-    button.BackgroundColor3 = Color3.fromRGB(200, 60, 60)
-    button.Size = UDim2.new(1, -20, 0, 35)
-    button.Position = UDim2.new(0, 10, 0, yOffset)
-    button.Font = Enum.Font.GothamBold
-    button.TextSize = 14
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.Text = name
-    button.AutoButtonColor = false
+for category, scripts in pairs(functionCategories) do
+    local categoryLabel = Instance.new("TextLabel")
+    categoryLabel.Parent = FunctionButtonsFrame
+    categoryLabel.BackgroundTransparency = 1
+    categoryLabel.Size = UDim2.new(1, -20, 0, 25)
+    categoryLabel.Position = UDim2.new(0, 10, 0, yOffset)
+    categoryLabel.Font = Enum.Font.GothamBold
+    categoryLabel.TextSize = 16
+    categoryLabel.TextColor3 = Color3.fromRGB(255, 200, 50)
+    categoryLabel.Text = category
+    categoryLabel.TextXAlignment = Enum.TextXAlignment.Left
 
-    local corner = Instance.new("UICorner", button)
-    corner.CornerRadius = UDim.new(0, 8)
+    yOffset = yOffset + 30
 
-    local highlight = Instance.new("UIStroke", button)
-    highlight.Thickness = 2
-    highlight.Color = Color3.fromRGB(255, 255, 255)
-    highlight.Transparency = 0.7
+    for name, url in pairs(scripts) do
+        local button = Instance.new("TextButton")
+        button.Parent = FunctionButtonsFrame
+        button.BackgroundColor3 = Color3.fromRGB(200, 60, 60)
+        button.Size = UDim2.new(1, -20, 0, 35)
+        button.Position = UDim2.new(0, 10, 0, yOffset)
+        button.Font = Enum.Font.GothamBold
+        button.TextSize = 14
+        button.TextColor3 = Color3.fromRGB(255, 255, 255)
+        button.Text = name
+        button.AutoButtonColor = false
 
-    -- Animation (ปุ่มกดแล้วเด้ง)
-    button.MouseButton1Click:Connect(function()
-        highlight.Transparency = 0
-        TweenService:Create(highlight, TweenInfo.new(0.3), {Transparency = 0.7}):Play()
-        loadstring(game:HttpGet(url, true))()
-    end)
+        local corner = Instance.new("UICorner", button)
+        corner.CornerRadius = UDim.new(0, 8)
 
-    yOffset = yOffset + 40
+        local highlight = Instance.new("UIStroke", button)
+        highlight.Thickness = 2
+        highlight.Color = Color3.fromRGB(255, 255, 255)
+        highlight.Transparency = 0.7
+
+        button.MouseButton1Click:Connect(function()
+            highlight.Transparency = 0
+            TweenService:Create(highlight, TweenInfo.new(0.3), {Transparency = 0.7}):Play()
+            loadstring(game:HttpGet(url, true))()
+        end)
+
+        yOffset = yOffset + 40
+    end
 end
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, yOffset)
 
--- Toggle Button (ปุ่มเปิดปิด UI)
+------------------------------------------------------
+-- 5. ปุ่มเปิด/ปิด UI (Toggle Button)
+------------------------------------------------------
 local ToggleButton = Instance.new("TextButton")
 ToggleButton.Parent = ScreenGui
 ToggleButton.BackgroundColor3 = Color3.fromRGB(200, 60, 60)
@@ -124,40 +143,9 @@ ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 local UICorner_Toggle = Instance.new("UICorner", ToggleButton)
 UICorner_Toggle.CornerRadius = UDim.new(1, 0)
 
--- Toggle Animation
 local isVisible = true
 ToggleButton.MouseButton1Click:Connect(function()
     isVisible = not isVisible
     local goal = isVisible and 1 or 0
     TweenService:Create(MainFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 350 * goal, 0, 450 * goal)}):Play()
-end)
-
--- UI Drag System (ลาก UI ได้)
-local dragging, dragInput, dragStart, startPos
-
-MainFrame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
-        dragStart = input.Position
-        startPos = MainFrame.Position
-
-        input.Changed:Connect(function()
-            if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-            end
-        end)
-    end
-end)
-
-MainFrame.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        dragInput = input
-    end
-end)
-
-UIS.InputChanged:Connect(function(input)
-    if input == dragInput and dragging then
-        local delta = input.Position - dragStart
-        MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
 end)
