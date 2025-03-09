@@ -70,6 +70,7 @@ local functionCategories = {
         ["🔥 บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
         ["🎩 Hitbox 32%"] = "https://pastebin.com/raw/NKTGd19i",
         ["💪🏻 อมตะ"] = "https://pastebin.com/raw/EjrTrMwC",
+        ["👾 คีย์บอร์ด"] = "https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt",
         ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
             },
     ["😈 ปั่นประสาทผู้เล่น"] = {
