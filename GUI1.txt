@@ -75,6 +75,7 @@ local functionCategories = {
         ["🌌 หลุมดำ"] = "https://pastebin.com/raw/pkZnU5P5",
         ["🥴 ชักว่าว"] = "https://pastefy.app/wa3v2Vgm/raw",
         ["🤧 ดีดกระเด็น"] = "https://pastebin.com/raw/TXMNj1yy",
+        ["🌟 ดึงคน false"] = "https://pastebin.com/raw/CuDBzSm6",
         ["🔫 เสก AK47"] = "https://pastebin.com/raw/wgqMHz9V"
     },
     ["🔍 ESP & การมองเห็น"] = {
