@@ -59,6 +59,7 @@ local functionCategories = {
     ["🏃 การเคลื่อนที่"] = {
         ["🚀 บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
         ["🔥 วาป"] = "https://pastebin.com/raw/K5FYvtvN",
+        ["🦴 ทะลุกำแพง"] = "https://pastebin.com/raw/7Qab6kg9",
         ["🏃 วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD"
     },
     ["⚔️ การโจมตี"] = {
@@ -68,7 +69,7 @@ local functionCategories = {
     ["🔧 เครื่องมือช่วยเล่น"] = {
         ["🎁 เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
         ["🔥 บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
-        ["🎩 Hitbox 32%"] = "https://pastebin.com/raw/NKTGd19i",
+        ["🎩 Hitbox 32%"] = "https://pastebin.com/raw/iRyTtfmf",
         ["💪🏻 อมตะ"] = "https://pastebin.com/raw/EjrTrMwC",
         ["👾 คีย์บอร์ด"] = "https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt",
         ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
