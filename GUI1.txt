@@ -56,36 +56,38 @@ FunctionButtonsFrame.ScrollBarThickness = 5
 FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 local functionCategories = {
-    ["🏃 การเคลื่อนที่"] = {
-        ["🚀 บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
-        ["🔥 วาป"] = "https://pastebin.com/raw/K5FYvtvN",
-        ["🦴 ทะลุกำแพง"] = "https://pastebin.com/raw/7Qab6kg9",
-        ["🏃 วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD"
+    ["⚡ | การเคลื่อนที่"] = {
+        ["[+] บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
+        ["[+] วาป"] = "https://pastebin.com/raw/K5FYvtvN",
+        ["[+] ทะลุกำแพง"] = "https://pastebin.com/raw/7Qab6kg9",
+        ["[+] วิ่งเร็ว 4 เท่า"] = "https://pastebin.com/raw/pZhkm5mD"
     },
-    ["⚔️ การโจมตี"] = {
-        ["⚔️ ฆ่าบอท ทุกตัว"] = "https://pastebin.com/raw/DczvQZyU",
-        ["🎯 ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw"
+    ["⚔️ | การโจมตี"] = {
+        ["[+] ฆ่าบอท ทุกตัว"] = "https://pastebin.com/raw/DczvQZyU",
+        ["[+] ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw"
     },
-    ["🔧 เครื่องมือช่วยเล่น"] = {
-        ["🎁 เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
-        ["🔥 บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
-        ["🎩 Hitbox 32%"] = "https://pastebin.com/raw/iRyTtfmf",
-        ["💪🏻 อมตะ"] = "https://pastebin.com/raw/EjrTrMwC",
-        ["👾 คีย์บอร์ด"] = "https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt",
-        ["👻 หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
+    ["⚒️ | เครื่องมือช่วยเล่น"] = {
+        ["[+] เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
+        ["[+] บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
+        ["[+] Hitbox 32%"] = "https://pastebin.com/raw/iRyTtfmf",
+        ["[+] อมตะ"] = "https://pastebin.com/raw/EjrTrMwC",
+        ["[+] คำสั่งแอดมิน"] = "https://pastebin.com/raw/3P1z104N",
+        ["[+] คีย์บอร์ด"] = "https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt",
+        ["[+] หายตัว"] = "https://pastebin.com/raw/3Rnd9rHf"
             },
-    ["😈 ปั่นประสาทผู้เล่น"] = {
-        ["🌌 หลุมดำ"] = "https://pastebin.com/raw/pkZnU5P5",
-        ["🥴 ชักว่าว"] = "https://pastefy.app/wa3v2Vgm/raw",
-        ["🤧 ดีดกระเด็น"] = "https://pastebin.com/raw/TXMNj1yy",
-        ["🌟 ดึงคน false"] = "https://pastebin.com/raw/CuDBzSm6",
-        ["🔫 เสก AK47"] = "https://pastebin.com/raw/wgqMHz9V"
+    ["🤪 |  ปั่นประสาทผู้เล่น"] = {
+        ["[+] หลุมดำ"] = "https://pastebin.com/raw/pkZnU5P5",
+        ["[+] ชักว่าว"] = "https://pastefy.app/wa3v2Vgm/raw",
+        ["[+] ดีดกระเด็น"] = "https://pastebin.com/raw/TXMNj1yy",
+        ["[+] ดึงคน false"] = "https://pastebin.com/raw/CuDBzSm6",
+        ["[+] เสก AK47"] = "https://pastebin.com/raw/wgqMHz9V"
     },
-    ["🔍 ESP & การมองเห็น"] = {
-        ["🔍 ESP Players"] = "https://pastebin.com/raw/ZkLhNuDL",
-        ["🤖 ESP BOT,NPC"] = "https://pastebin.com/raw/q26QuUBF"
+    ["👾 |  ESP & การมองเห็น"] = {
+        ["[+] ESP Players"] = "https://pastebin.com/raw/ZkLhNuDL",
+        ["[+] ESP BOT,NPC"] = "https://pastebin.com/raw/q26QuUBF"
     }
 }
+
 
 local yOffset = 0
 for category, scripts in pairs(functionCategories) do
