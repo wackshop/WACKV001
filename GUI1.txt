@@ -46,7 +46,8 @@ FunctionButtonsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 local functionCategories = {
     ["⚔️ | การโจมตี"] = {
         ["[+] ฆ่าบอท ทุกตัว"] = "https://pastebin.com/raw/DczvQZyU",
-        ["[+] ล็อคหัว"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw"
+        ["[+] ล็อคหัวบอท"] = "https://pastebin.com/raw/NNRzb6Zr",
+        ["[+] ล็อคหัว ผู้เล่น"] = "https://gist.githubusercontent.com/Aimboter477387/582af6aec49782899d5d375ab239039e/raw"
     },
     ["⚡ | การเคลื่อนที่"] = {
         ["[+] บิน V1"] = "https://pastebin.com/raw/iUVERBrs",
