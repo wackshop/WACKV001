@@ -57,7 +57,7 @@ local functionCategories = {
     },
     [" |  ESP & การมองเห็น"] = {
         ["[+] ESP Players"] = "https://pastebin.com/raw/ZkLhNuDL",
-        ["[+] ESP BOT,NPC"] = "https://pastebin.com/raw/q26QuBF"
+        ["[+] ESP BOT,NPC"] = "https://pastebin.com/raw/61RKwPvf"
     },
     ["⚒️ | เครื่องมือช่วยเล่น"] = {
         ["[+] เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
