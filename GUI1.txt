@@ -62,6 +62,7 @@ local functionCategories = {
     ["⚒️ | เครื่องมือช่วยเล่น"] = {
         ["[+] เสกของ"] = "https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gametoolgiver.lua",
         ["[+] บูส FPS"] = "https://raw.githubusercontent.com/XNEOFF/FPS-BOOSTER/main/FPSBooster.txt",
+        ["[+] แมพสว่าง"] = "https://pastebin.com/raw/0vQMuzb7",
         ["[+] Hitbox 32%"] = "https://pastebin.com/raw/iRyTtfmf",
         ["[+] อมตะ"] = "https://pastebin.com/raw/EjrTrMwC",
         ["[+] คำสั่งแอดมิน"] = "https://pastebin.com/raw/3P1z104N",
