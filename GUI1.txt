@@ -1,62 +1,33 @@
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Wack Shop", "DarkTheme")
 
-local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 400, 0, 200)
-MainFrame.Position = UDim2.new(0.5, -200, 0.5, -100)
-MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-MainFrame.BackgroundTransparency = 0.15
-MainFrame.BorderSizePixel = 0
-MainFrame.Parent = ScreenGui
-MainFrame.Visible = false
-MainFrame.ClipsDescendants = true
-
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(0, 15)
-UICorner.Parent = MainFrame
-
-MainFrame.Position = UDim2.new(0.5, -200, 1, 0)
-MainFrame:TweenPosition(UDim2.new(0.5, -200, 0.4, -100), "Out", "Quart", 1, true, function()
-    wait(0.5)
+local Tab = Window:NewTab("ATTACK") 
+local Section = Tab:NewSection("สำหรับช่วยการโจมตี")
+Section:NewButton("Aimbot Player", "Aimbot เมือ่คลิกขวาค้าง", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V3/main/src/Aimbot.lua"))()
+ExunysDeveloperAimbot()
+end)
+Section:NewButton("Aimbot NPC BOT", "lock npc", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/NNRzb6Zr"))() 
 end)
 
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Size = UDim2.new(1, 0, 0.5, 0)
-TextLabel.Position = UDim2.new(0, 0, 0, 10)
-TextLabel.Text = "สคริป WACK SHOP มีการอัพเดท\nเข้า Discord เพื่อติดต่อแอดมิน"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.BackgroundTransparency = 1
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = MainFrame
-
-local UITextStroke = Instance.new("UIStroke")
-UITextStroke.Thickness = 2
-UITextStroke.Color = Color3.fromRGB(0, 0, 0)
-UITextStroke.Parent = TextLabel
-
-local CopyButton = Instance.new("TextButton")
-CopyButton.Size = UDim2.new(0.6, 0, 0.2, 0)
-CopyButton.Position = UDim2.new(0.2, 0, 0.65, 0)
-CopyButton.Text = "คัดลอกลิงก์"
-CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CopyButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-CopyButton.Font = Enum.Font.GothamBold
-CopyButton.TextScaled = true
-CopyButton.Parent = MainFrame
-
-local ButtonCorner = Instance.new("UICorner")
-ButtonCorner.CornerRadius = UDim.new(0, 10)
-ButtonCorner.Parent = CopyButton
-
-CopyButton.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/eHMPfeQjnh")
-    CopyButton.Text = "คัดลอกแล้ว!"
-    CopyButton.BackgroundColor3 = Color3.fromRGB(0, 200, 100)
-    wait(1)
-    CopyButton.Text = "คัดลอกลิงก์"
-    CopyButton.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+local Tab = Window:NewTab("EPS") 
+local Section = Tab:NewSection("บอกตำแหน่ง")
+Section:NewButton("EPS Player", "EPS", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/s7viVmDR"))()
 end)
 
-wait(1)
-MainFrame.Visible = true
+local Tab = Window:NewTab("Tools") 
+local Section = Tab:NewSection("เครื่องมือ")
+Section:NewButton("หายตัว", "หายตัว มองไม่เห็น เมื่อกด T", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Sakupenny/Universal-R6-Invis/refs/heads/main/Main.lua"))()
+end)
+Section:NewButton("เสกของ", "เสกของใช้งานได้บางแมพเท่านั้น", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Tool-give-FE-Remake-by-goodRc7-30114"))()
+end)
+Section:NewButton("บูส FPS", "ลดอาการเครื่องแล็ค", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ik9FvXcd",true))()
+end)
+Section:NewButton("HACK Admin", "ได้บางแมพเท่านั้น", function()
+    loadstring(game:HttpGet("https://gist.github.com/someunknowndude/38cecea5be9d75cb743eac8b1eaf6758/raw"))()
+end)
