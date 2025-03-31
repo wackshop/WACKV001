@@ -11,7 +11,7 @@ Section:NewButton("Aimbot NPC BOT", "lock npc", function()
     loadstring(game:HttpGet("https://pastebin.com/raw/NNRzb6Zr"))() 
 end)
 Section:NewButton("Hitbox", "เพิ่มโอกาส โจมตีได้แม่นยำ", function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/NNRzb6Zr"))() 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
 end)
 
 local Tab = Window:NewTab("EPS") 
